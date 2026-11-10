@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="A privacy-first, inspectable workflow for creating a LinkedIn post and branded GIF pair." />
+    <title>Write Like Me — Post + Motion Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="#top">AI NATIVE / 001</a>
+      <nav aria-label="Primary navigation">
+        <a href="#workflow">Workflow</a>
+        <a href="#pair">The pair</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-grid">
+        <div>
+          <p class="eyebrow">An inspectable writing system</p>
+          <h1>I did not ask AI to sound like me. I made it show its work.</h1>
+          <p class="lede">A local corpus audit becomes an editable voice guide. A sourced claim becomes an approved post. Only then does the post become motion.</p>
+          <div class="actions">
+            <a class="button primary" href="#pair">See the final pair</a>
+            <a class="button secondary" href="#workflow">Trace the decisions</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Five-stage workflow">
+          <p>THE GATE SEQUENCE</p>
+          <ol>
+            <li><span>01</span> Audit the corpus</li>
+            <li><span>02</span> Approve the voice</li>
+            <li><span>03</span> Approve the claim</li>
+            <li><span>04</span> Approve the motion</li>
+            <li><span>05</span> Export the pair</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="workflow" class="workflow">
+        <div class="section-heading">
+          <p class="eyebrow">The workflow</p>
+          <h2>Every stage leaves evidence.</h2>
+          <p>The public view is precomputed. The real workflow runs privately and makes each approval explicit.</p>
+        </div>
+        <div class="steps">
+          <article><span>01</span><h3>Source audit</h3><p>Twenty synthetic demonstration posts are checked for coverage, dates, permalinks, and comparable metric windows.</p></article>
+          <article><span>02</span><h3>Voice guide</h3><p>Observed patterns cite post IDs locally. Recommendations stay editable and distinct from evidence.</p></article>
+          <article><span>03</span><h3>Draft gate</h3><p>Three hooks lead to one sourced draft. The claim and the copy require separate approval.</p></article>
+          <article><span>04</span><h3>Motion gate</h3><p>A storyboard defines words, change, timing, and transition before a single frame is rendered.</p></article>
+        </div>
+      </section>
+
+      <section class="voice section-grid">
+        <div class="section-heading sticky">
+          <p class="eyebrow">The voice profile</p>
+          <h2>Rules you can read, challenge, and correct.</h2>
+          <p>These are approved derived rules. Historical excerpts are deliberately absent from this public export.</p>
+        </div>
+        <ol id="voice-rules" class="rule-list" aria-live="polite"></ol>
+      </section>
+
+      <section id="pair" class="pair">
+        <div class="section-heading">
+          <p class="eyebrow">The approved pair</p>
+          <h2>One claim. Two coordinated forms.</h2>
+          <p id="demo-notice" class="notice"></p>
+        </div>
+        <div class="pair-grid">
+          <article class="post-card">
+            <div class="card-meta"><span>POST / 001</span><span id="pair-label">Curated example</span></div>
+            <p id="post-text" class="post-text"></p>
+            <div class="claim"><span>APPROVED CLAIM</span><strong id="main-claim"></strong></div>
+          </article>
+          <figure class="motion-card">
+            <picture>
+              <source srcset="assets/infographic.gif" type="image/gif" />
+              <img id="motion-image" src="assets/fallback.png" alt="Loading the approved motion asset" />
+            </picture>
+            <figcaption id="alt-text"></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="storyboard">
+        <div class="section-heading">
+          <p class="eyebrow">Before animation</p>
+          <h2>The storyboard is the contract.</h2>
+        </div>
+        <div id="storyboard-frames" class="frame-grid"></div>
+      </section>
+
+      <section id="privacy" class="privacy section-grid">
+        <div>
+          <p class="eyebrow">Privacy boundary</p>
+          <h2>The corpus never crosses the model boundary.</h2>
+        </div>
+        <div>
+          <p id="privacy-copy" class="privacy-copy"></p>
+          <ul class="privacy-list">
+            <li><strong>Local only</strong><span>Raw posts, excerpts, retrieval, SQLite state</span></li>
+            <li><strong>Model input</strong><span>Approved derived rules, new facts, supplied experience</span></li>
+            <li><strong>Public export</strong><span>Approved pair, sanitized profile, no live API</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="closing">
+        <p class="eyebrow">What this demonstrates</p>
+        <h2>AI-native work is not just generation. It is orchestration, judgment, and a trail someone else can inspect.</h2>
+        <p>Nothing was published automatically.</p>
+      </section>
+    </main>
+
+    <footer><span>LINKEDIN POST + GIF STUDIO</span><span>PRIVATE CORPUS / PUBLIC PROOF</span></footer>
+    <script src="app.js" defer></script>
+  </body>
+</html>
+

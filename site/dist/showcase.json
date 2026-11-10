@@ -1,0 +1,62 @@
+{
+  "label": "Illustrative synthetic demo",
+  "privacy": "Historical post text stayed local. The model received approved derived rules and new-topic evidence only.",
+  "voice_profile_version": 1,
+  "voice_rules": [
+    "Aim for roughly 60\u201335 words unless the idea needs less.",
+    "Use short paragraphs and concrete examples before abstract conclusions.",
+    "Write in first person only for experience the author explicitly supplied.",
+    "Make one clear claim and connect every factual statement to supplied evidence.",
+    "End with a specific implication or focused question, not a generic engagement prompt.",
+    "Do not add hashtags unless the author requests them."
+  ],
+  "public_excerpt_ids": [],
+  "draft": {
+    "post_id": "showcase-001",
+    "hooks": [
+      "The useful part of making AI-assisted writing inspectable is not the first draft.",
+      "I trust making AI-assisted writing inspectable more when I can inspect how it was made.",
+      "What changes when making AI-assisted writing inspectable has an approval trail?"
+    ],
+    "selected_hook": "The useful part of making AI-assisted writing inspectable is not the first draft.",
+    "post_text": "The useful part of making AI-assisted writing inspectable is not the first draft.\n\nA trustworthy making AI-assisted writing inspectable workflow makes its evidence and approval gates visible.\n\nThe workflow separates source material, voice rules, claims, and visual decisions. Each stage can be reviewed before the next one begins.\n\nWhat grounds this draft:\n\u2022 The workflow separates corpus audit, voice approval, claim approval, storyboard approval, and export.\n\u2022 Raw historical post text remains local and is excluded from model payloads.\n\u2022 Each completed pair includes a post, storyboard, GIF, fallback PNG, alt text, and manifest.\n\nThat makes the result easier to revise\u2014and easier to stand behind.",
+    "main_claim": "A trustworthy making AI-assisted writing inspectable workflow makes its evidence and approval gates visible.",
+    "supporting_evidence": [
+      "The workflow separates corpus audit, voice approval, claim approval, storyboard approval, and export.",
+      "Raw historical post text remains local and is excluded from model payloads.",
+      "Each completed pair includes a post, storyboard, GIF, fallback PNG, alt text, and manifest."
+    ],
+    "sources": [
+      "Workshop requirements supplied by the project owner"
+    ]
+  },
+  "storyboard": {
+    "concept": "Approval gates turn one claim into a traceable visual.",
+    "frames": [
+      {
+        "on_screen_words": "SOURCE \u2192 VOICE \u2192 CLAIM",
+        "visual_change": "Three checkpoints appear in sequence.",
+        "duration_seconds": 2.0,
+        "transition": "fade"
+      },
+      {
+        "on_screen_words": "APPROVE THE WORDS",
+        "visual_change": "The claim checkpoint becomes highlighted.",
+        "duration_seconds": 2.0,
+        "transition": "slide"
+      },
+      {
+        "on_screen_words": "THEN DESIGN THE MOTION",
+        "visual_change": "The final visual node completes the loop.",
+        "duration_seconds": 2.0,
+        "transition": "fade"
+      }
+    ],
+    "alt_text": "Animated infographic showing source, voice, and claim approval before visual design. Main claim: A trustworthy making AI-assisted writing inspectable workflow makes its evidence and approval gates visible."
+  },
+  "assets": {
+    "gif": "assets/infographic.gif",
+    "fallback": "assets/fallback.png"
+  },
+  "demo_notice": "The example corpus is synthetic. Replace it with an explicitly approved real run before presenting this as your personal writing profile."
+}

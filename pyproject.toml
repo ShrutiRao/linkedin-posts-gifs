@@ -1,0 +1,33 @@
+[project]
+name = "linkedin-post-gif-studio"
+version = "0.1.0"
+description = "A privacy-first studio that learns a LinkedIn writing voice and pairs approved posts with branded GIFs."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "imageio>=2.37.0",
+  "numpy>=2.1.0",
+  "openai>=2.8.0",
+  "pandas>=2.2.0",
+  "pillow>=11.0.0",
+  "pydantic>=2.10.0",
+  "python-dotenv>=1.0.1",
+  "scikit-learn>=1.5.0",
+  "streamlit>=1.41.0",
+  "trafilatura>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+  "pytest-cov>=6.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.coverage.run]
+source = ["linkedin_gif_studio"]
+
