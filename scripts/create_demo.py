@@ -84,7 +84,6 @@ def main() -> None:
         personal_experience="I wanted a demo that showed my judgment, not only a generated final answer.",
     )
     studio = AIStudio(client=None)
-    draft = studio._demo_draft(request)
     package = studio.generate_draft("showcase-001", profile, request)
     package.claim_approved = True
     package.post_approved = True
@@ -113,4 +112,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

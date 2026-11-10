@@ -4,6 +4,7 @@ __pycache__/
 .pytest_cache/
 .test-tmp/
 test-run-admin/
+/test-*/
 .ruff_cache/
 *.py[cod]
 *.db

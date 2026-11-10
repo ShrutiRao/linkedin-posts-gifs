@@ -18,6 +18,7 @@ from linkedin_gif_studio.corpus import load_corpus, posts_to_frame
 from linkedin_gif_studio.models import DraftPackage, StoryboardFrame, StoryboardSpec, VoiceProfile
 from linkedin_gif_studio.render import write_pair_package
 from linkedin_gif_studio.showcase import export_showcase
+from linkedin_gif_studio.sources import extract_public_sources
 from linkedin_gif_studio.storage import StudioStore
 from linkedin_gif_studio.style import analyze_voice, retrieve_similar
 from linkedin_gif_studio.workflow import draft_gate, render_gate, visual_gate
@@ -187,12 +188,22 @@ elif page == "3 · Draft post":
             experience = st.text_area("Real personal experience (optional)", height=100)
             submitted = st.form_submit_button("Generate three hooks + one post", type="primary")
         if submitted:
+            source_urls = [line.strip() for line in urls.splitlines() if line.strip()]
+            extracted = extract_public_sources(source_urls) if source_urls else []
+            failures = [item for item in extracted if item.error]
+            if failures and not facts.strip():
+                st.error("A source URL could not be extracted. Paste the relevant facts or notes before generating: " + "; ".join(f"{item.url}: {item.error}" for item in failures))
+                st.stop()
+            source_facts = "\n\n".join(f"[Public source: {item.url}]\n{item.text}" for item in extracted if item.text)
+            combined_facts = "\n\n".join(part for part in (facts.strip(), source_facts) if part)
+            for item in failures:
+                st.warning(f"Could not extract {item.url}; using your pasted notes instead. {item.error}")
             request = DraftRequest(
                 topic=topic,
                 audience=audience,
                 point_of_view=pov,
-                facts=facts,
-                source_urls=[line.strip() for line in urls.splitlines() if line.strip()],
+                facts=combined_facts,
+                source_urls=source_urls,
                 personal_experience=experience,
             )
             with st.spinner("Drafting from approved rules and supplied evidence…"):
@@ -324,4 +335,3 @@ else:
             st.success(f"Sanitized showcase exported to {destination}. No corpus text was included.")
         st.subheader("Required artifact package")
         st.write(sorted(path.name for path in Path(pair_dir).iterdir()))
-

@@ -76,8 +76,8 @@ def load_corpus(source: str | bytes | BinaryIO) -> tuple[list[CorpusPost], Audit
         if column not in frame.columns:
             frame[column] = pd.NA
 
-    parsed_dates = pd.to_datetime(frame["date"], errors="coerce", utc=True)
-    measured_dates = pd.to_datetime(frame["measured_at"], errors="coerce", utc=True)
+    parsed_dates = pd.to_datetime(frame["date"], errors="coerce", utc=True, format="mixed")
+    measured_dates = pd.to_datetime(frame["measured_at"], errors="coerce", utc=True, format="mixed")
     malformed_dates = [int(i) + 2 for i, (raw, parsed) in enumerate(zip(frame["date"], parsed_dates)) if _optional_text(raw) and pd.isna(parsed)]
 
     posts: list[CorpusPost] = []
@@ -148,4 +148,3 @@ def load_corpus(source: str | bytes | BinaryIO) -> tuple[list[CorpusPost], Audit
 
 def posts_to_frame(posts: list[CorpusPost]) -> pd.DataFrame:
     return pd.DataFrame([post.model_dump(mode="json") for post in posts])
-
